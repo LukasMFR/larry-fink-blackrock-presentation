@@ -155,26 +155,35 @@ html[data-view-mode="preview"] .slide.active{opacity:1!important;visibility:visi
 .pc-status.connected .pc-status-dot{background:#00846f}.pc-status.connected{color:#136157}
 .pc-button{background:#e5efeb;color:#163934;border:0;padding:12px 17px;font-size:14px!important;font-weight:700!important;transition:background .2s}
 .pc-button:hover{background:#d2e7df}.pc-button.primary{color:white;background:#057b74}.pc-button.primary:hover{background:#066962}
-.pc-layout{width:100%;max-width:1800px;margin:0 auto;padding:28px clamp(22px,3vw,50px) 26px;display:grid;grid-template-columns:minmax(0,1.03fr) minmax(440px,.97fr);gap:27px;align-items:start;flex:1}
-.pc-left,.pc-right{min-width:0;display:flex;flex-direction:column;gap:24px}
-.pc-panel{background:#fff;padding:24px 25px}.pc-panel h2{font-size:15px;font-weight:750;color:#2e504d;margin:0}.pc-panel-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:17px}
+.pc-layout{width:100%;max-width:1800px;margin:0 auto;padding:28px clamp(22px,3vw,50px) 26px;display:grid;grid-template-columns:minmax(250px,.31fr) minmax(0,1fr);gap:22px;align-items:start;flex:1}
+.pc-left,.pc-right{min-width:0;display:flex;flex-direction:column;gap:18px}
+.pc-panel{background:#fff;padding:19px 20px}.pc-panel h2{font-size:15px;font-weight:750;color:#2e504d;margin:0}.pc-panel-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
 .pc-count{color:#536d68;font-size:14px;font-weight:650;font-variant-numeric:tabular-nums}
 .pc-preview{width:100%;aspect-ratio:16/9;position:relative;overflow:hidden;background:#071a1d}
 .pc-preview iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#071a1d;pointer-events:none}
-.pc-slide-meta{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;margin-top:17px}
-.pc-slide-meta h3{margin:0;font-size:24px;letter-spacing:-.03em;line-height:1.12}.pc-slide-meta p{font-size:15px;color:#637c75;margin-top:6px}
+.pc-slide-meta{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:9px;margin-top:13px}
+.pc-slide-meta h3{margin:0;font-size:20px;letter-spacing:-.02em;line-height:1.2}.pc-slide-meta p{font-size:14px;color:#637c75;margin-top:5px}
 .pc-pacing{white-space:nowrap;font-size:13px;color:#0a6864;background:#e6f1ed;padding:8px 11px;font-variant-numeric:tabular-nums;font-weight:700}
-.pc-next-layout{display:grid;grid-template-columns:minmax(165px,38%) 1fr;align-items:center;gap:20px}
-.pc-next-label{font-size:14px;color:#536e69;margin-bottom:8px;font-weight:750}.pc-next-title{font-size:21px;letter-spacing:-.02em;line-height:1.22;font-weight:730}
+.pc-next-layout{display:grid;grid-template-columns:minmax(0,1fr);align-items:center;gap:12px}
+.pc-next-label{font-size:14px;color:#536e69;margin-bottom:8px;font-weight:750}.pc-next-title{font-size:17px;letter-spacing:-.01em;line-height:1.3;font-weight:730}
 .pc-next-preview{aspect-ratio:16/9;position:relative;overflow:hidden;background:#061719}.pc-next-preview iframe{width:100%;height:100%;border:0;pointer-events:none;display:block}
-.pc-notes{display:flex;flex-direction:column;min-height:690px;max-height:calc(100vh - 175px);position:sticky;top:18px;padding:0}
-.pc-notes-head{display:flex;justify-content:space-between;align-items:start;gap:16px;padding:25px 28px 20px;background:#fff}
+.pc-notes{display:flex;flex-direction:column;min-height:580px;height:calc(100dvh - 175px);max-height:calc(100dvh - 175px);position:sticky;top:18px;padding:0;overflow:hidden}
+.pc-notes-head{display:flex;justify-content:space-between;align-items:start;flex-wrap:wrap;gap:16px;padding:22px 28px 18px;background:#fff}
 .pc-speaker{font-size:16px;font-weight:750;color:#08746e}.pc-notes-head h2{font-size:27px;line-height:1.16;letter-spacing:-.035em;color:#102b2c;margin-top:8px}
 .pc-notes-head .pc-note-target{color:#58716d;font-size:14px;font-variant-numeric:tabular-nums;font-weight:650;white-space:nowrap;padding-top:2px}
+/* Controls affect note text only, not the projected slide. */
+.pc-notes-tools{display:flex;flex-direction:column;align-items:flex-end;gap:10px;margin-left:auto}
+.pc-font-tools{display:flex;align-items:center;gap:5px;flex-wrap:wrap;justify-content:flex-end}
+.pc-font-label{font-size:13px;color:#58716d;font-weight:700;margin-right:5px}
+.pc-font-button{background:#e6f1ed;border:0;color:#135c55;padding:7px 11px;min-height:34px;min-width:35px;font-size:16px!important;font-weight:750!important;line-height:1.1}
+.pc-font-button:hover{background:#cfe6de}
+.pc-font-button:disabled{opacity:.38;cursor:default}
+.pc-font-button.pc-font-default{font-size:13px!important;min-width:auto}
+.pc-font-size-value{font-size:13px;color:#526e68;font-variant-numeric:tabular-nums;min-width:40px;text-align:right}
 .pc-note-scroll{overflow:auto;overscroll-behavior:contain;flex:1;padding:10px 28px 26px;scrollbar-color:#c2d7d0 transparent}
-.pc-speech{font-size:clamp(17px,1.22vw,20px);line-height:1.67;color:#203937;max-width:70ch}
-.pc-speech p{line-height:1.67;margin:0 0 18px}.pc-speech strong{font-weight:750;color:#0a4846}.pc-speech em{color:#456661}.pc-speech p:last-child{margin-bottom:0}
-.pc-note-action{margin-top:24px;padding:17px 19px;background:#e4f1ec;color:#214c46;font-size:15px;line-height:1.52}.pc-note-action strong{display:block;margin-bottom:6px}
+.pc-speech{font-size:var(--pc-notes-font-size,24px);line-height:1.55;color:#203937;max-width:76ch;overflow-wrap:break-word}
+.pc-speech p{line-height:1.55;margin:0 0 20px}.pc-speech strong{font-weight:750;color:#0a4846}.pc-speech em{color:#456661}.pc-speech p:last-child{margin-bottom:0}
+.pc-note-action{margin-top:24px;padding:17px 19px;background:#e4f1ec;color:#214c46;font-size:17px;line-height:1.52}.pc-note-action strong{display:block;margin-bottom:6px}
 .pc-note-hidden{display:none;padding:30px;font-size:19px;color:#465c58;line-height:1.5}
 .pc-notes.is-hidden .pc-note-scroll{display:none}.pc-notes.is-hidden .pc-note-hidden{display:block}
 .pc-bottom{position:sticky;bottom:0;background:#fbfdfb;z-index:20;padding:18px clamp(22px,3vw,50px) 18px;border-top:3px solid #dbe8e3;display:flex;justify-content:space-between;align-items:center;gap:24px}
@@ -189,8 +198,9 @@ html[data-view-mode="preview"] .slide.active{opacity:1!important;visibility:visi
 .pc-finance-controls{display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin-top:18px;background:#e8f2ed;padding:14px 16px}.pc-finance-controls[hidden]{display:none!important}.pc-finance-controls span{font-weight:750;font-size:14px;margin-right:6px}.pc-finance-controls button{border:0;background:white;color:#12584f;padding:10px 12px;font-size:13px!important;font-weight:750!important}.pc-finance-controls button:hover,.pc-finance-controls button:focus-visible{background:#cde6da}
 #pc-full-script{border:0;padding:0;width:min(980px,calc(100vw - 40px));height:min(90vh,960px);max-height:90vh;color:#102b2c;background:#fff;box-shadow:0 24px 65px #071b1840}#pc-full-script::backdrop{background:#061917b3}.pc-dialog-top{padding:20px 24px;background:#e5f1eb;display:flex;justify-content:space-between;align-items:center;gap:20px;position:sticky;top:0;z-index:2}.pc-dialog-top strong{font-size:23px}.pc-dialog-body{padding:28px 35px 44px;overflow:auto;line-height:1.58;font-size:16px}.pc-dialog-body h1{font-size:32px;line-height:1.1;margin:22px 0 17px}.pc-dialog-body h2{font-size:23px;margin:28px 0 12px}.pc-dialog-body p{margin:0 0 15px}.pc-dialog-body table{border-collapse:collapse;width:100%;margin:12px 0 24px;display:block;overflow-x:auto}.pc-dialog-body th,.pc-dialog-body td{text-align:left;padding:8px 10px;border-bottom:1px solid #cbded5}.pc-dialog-body hr{height:3px;border:0;background:#dcece3;margin:30px 0}.pc-dialog-body blockquote{margin:17px 0;padding:12px 18px;background:#e6f1eb}.pc-dialog-body ul,.pc-dialog-body ol{padding-left:23px;margin:12px 0 25px}.pc-dialog-body li{margin-bottom:5px}.pc-dialog-body code{white-space:normal;word-break:break-word}
 #presenter-toggle{font-size:14px!important;font-weight:700!important;width:auto!important;padding:0 11px!important}
-@media(max-width:1100px){.pc-layout{grid-template-columns:1fr}.pc-notes{position:static;min-height:430px;max-height:none}.pc-note-scroll{overflow:visible}.pc-head{align-items:flex-start}.pc-bottom{position:static}.pc-meter{display:none}}
-@media(max-width:650px){.pc-head{flex-direction:column;align-items:stretch}.pc-head-right{justify-content:flex-start}.pc-layout{padding:17px 14px;gap:16px}.pc-panel{padding:16px}.pc-notes-head{padding:21px 18px}.pc-note-scroll{padding:9px 18px 20px}.pc-bottom{padding:14px;flex-wrap:wrap}.pc-mini{display:none}.pc-next-layout{grid-template-columns:38% 1fr;gap:12px}}
+@media(max-width:900px){.pc-layout{grid-template-columns:1fr}.pc-notes{position:static;min-height:460px;height:auto;max-height:none;overflow:visible;order:-1}.pc-left{order:1}.pc-note-scroll{overflow:visible}.pc-head{align-items:flex-start}.pc-bottom{position:static}.pc-meter{display:none}.pc-next-layout{grid-template-columns:minmax(130px,38%) 1fr}}
+@media(max-width:650px){.pc-head{flex-direction:column;align-items:stretch}.pc-head-right{justify-content:flex-start}.pc-layout{padding:17px 14px;gap:16px}.pc-panel{padding:16px}.pc-notes-head{padding:21px 18px}.pc-note-scroll{padding:9px 18px 20px}.pc-bottom{padding:14px;flex-wrap:wrap}.pc-mini{display:none}.pc-next-layout{grid-template-columns:38% 1fr;gap:12px}.pc-notes-tools{align-items:flex-start;margin-left:0}.pc-font-tools{justify-content:flex-start}}
+@media(min-width:901px) and (max-width:1100px){.pc-notes{min-height:360px;height:calc(100dvh - 310px);max-height:calc(100dvh - 310px)}}
 @media(prefers-reduced-motion:reduce){#presenter-console *,#presenter-console *::before,#presenter-console *::after{transition:none!important}}
 @media print{#presenter-console{display:none!important}}
 </style>
@@ -468,7 +478,7 @@ html[data-view-mode="preview"] .slide.active{opacity:1!important;visibility:visi
       </section>
     </div>
     <section id="pc-notes-panel" class="pc-panel pc-notes" aria-label="Notes privées du présentateur">
-      <div class="pc-notes-head"><div><span class="pc-speaker" id="pc-speaker">Lukas MAUFFRÉ</span><h2 id="pc-notes-title">Slide 1 — Titre</h2></div><span class="pc-note-target" id="pc-note-target">Cible : 30 s</span></div>
+      <div class="pc-notes-head"><div><span class="pc-speaker" id="pc-speaker">Lukas MAUFFRÉ</span><h2 id="pc-notes-title">Slide 1 — Titre</h2></div><div class="pc-notes-tools"><span class="pc-note-target" id="pc-note-target">Cible : 30 s</span><div class="pc-font-tools" role="group" aria-label="Taille de police des notes"><span class="pc-font-label">Texte</span><button type="button" id="pc-font-decrease" class="pc-font-button" aria-label="Réduire la police des notes" title="Diminuer">−</button><button type="button" id="pc-font-reset" class="pc-font-button pc-font-default" title="Rétablir la taille par défaut">Défaut</button><button type="button" id="pc-font-increase" class="pc-font-button" aria-label="Agrandir la police des notes" title="Agrandir">+</button><output id="pc-font-size-value" class="pc-font-size-value" aria-live="polite">24 px</output></div></div></div>
       <div class="pc-note-scroll" id="pc-note-scroll"><div id="pc-speech" class="pc-speech"></div><div id="pc-action" class="pc-note-action" hidden></div></div>
       <div class="pc-note-hidden">Les notes sont masquées. Utilisez le plan et les aperçus pour vous entraîner sans lire le script.</div>
     </section>
@@ -632,6 +642,25 @@ html[data-view-mode="preview"] .slide.active{opacity:1!important;visibility:visi
   if(!isPresenter)return;
   const fmt=seconds=>`${String(Math.floor(seconds/60)).padStart(2,'0')}:${String(seconds%60).padStart(2,'0')}`;
   const speechScroll=q('pc-note-scroll');
+  const fontKey='larry-fink-ece-notes-font-size-v1';
+  const defaultFontSize=24, minFontSize=18, maxFontSize=36, fontStep=2;
+  let notesFontSize=defaultFontSize;
+  try{
+    const stored=Number(localStorage.getItem(fontKey));
+    if(Number.isFinite(stored)&&stored>=minFontSize&&stored<=maxFontSize)notesFontSize=stored;
+  }catch(e){} // Some browsers restrict localStorage for local file URLs.
+  function setNotesFontSize(next){
+    notesFontSize=Math.max(minFontSize,Math.min(maxFontSize,next));
+    q('pc-notes-panel').style.setProperty('--pc-notes-font-size',notesFontSize+'px');
+    q('pc-font-size-value').textContent=notesFontSize+' px';
+    q('pc-font-decrease').disabled=notesFontSize<=minFontSize;
+    q('pc-font-increase').disabled=notesFontSize>=maxFontSize;
+    try{localStorage.setItem(fontKey,String(notesFontSize))}catch(e){}
+  }
+  q('pc-font-decrease').addEventListener('click',()=>setNotesFontSize(notesFontSize-fontStep));
+  q('pc-font-reset').addEventListener('click',()=>setNotesFontSize(defaultFontSize));
+  q('pc-font-increase').addEventListener('click',()=>setNotesFontSize(notesFontSize+fontStep));
+  setNotesFontSize(notesFontSize);
   const meter=q('pc-meter-track');
   let displayedSlide=0;
   let notesVisible=true;
